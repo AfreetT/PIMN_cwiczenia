@@ -45,7 +45,7 @@ public:
 		reference operator*() const { return *data; }
 		pointer operator->() const { return data; }
 		iterator& operator++() { ++data; return *this; }
-		iterator operator++(int) { iterator tmp(*this); ++tmp; return tmp; }
+		iterator operator++(int) {iterator tmp = *this; ++(*this); return tmp; }
 		bool operator==(const iterator& other) const { return data == other.data; }
 		bool operator!=(const iterator& other) const { return data != other.data; }
 
